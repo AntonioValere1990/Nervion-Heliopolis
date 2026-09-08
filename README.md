@@ -2,7 +2,9 @@
 
 Podcast independiente del Sevilla y el Betis. Dos colores. Una ciudad. Todo el fútbol.
 
-- **Web de lanzamiento** (GitHub Pages): archivos `index.html`, `styles.css`, `app.js` en la raíz.
+**Repo:** [Podcast-nervionyheliopolis/NervionyHeliopolis](https://github.com/Podcast-nervionyheliopolis/NervionyHeliopolis)
+
+- **Web de lanzamiento** (GitHub Pages): [podcast-nervionyheliopolis.github.io/NervionyHeliopolis](https://podcast-nervionyheliopolis.github.io/NervionyHeliopolis/)
 - **App** (PWA, reproductor, descargas, centro de control): `src/` + `public/`.
 
 ## App
