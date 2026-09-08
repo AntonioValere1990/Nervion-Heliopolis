@@ -1,74 +1,154 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Nervión & Heliópolis</title>
-<meta name="description" content="Podcast independiente del Sevilla y el Betis. Previa y postpartido por separado, con una sola voz y siempre en menos de 30 minutos.">
-<link rel="canonical" href="https://podcast-nervionyheliopolis.github.io/NervionyHeliopolis/">
-<meta property="og:title" content="Nervión & Heliópolis">
-<meta property="og:description" content="Dos colores. Una ciudad. Todo el fútbol. Previa y postpartido del Sevilla y el Betis por separado.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://podcast-nervionyheliopolis.github.io/NervionyHeliopolis/">
-<meta name="twitter:card" content="summary">
-<link rel="icon" href="favicon.svg">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#090909">
+  <title>Nervión & Heliópolis</title>
+  <meta name="description" content="Podcast independiente del Sevilla y el Betis. Previa y postpartido por separado, una sola voz y menos de 30 minutos.">
+  <link rel="canonical" href="https://podcast-nervionyheliopolis.github.io/NervionyHeliopolis/">
+  <meta property="og:title" content="Nervión & Heliópolis">
+  <meta property="og:description" content="Dos colores. Una ciudad. Todo el fútbol.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://podcast-nervionyheliopolis.github.io/NervionyHeliopolis/">
+  <link rel="icon" href="favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-  <a class="brand" href="#inicio"><img src="logo.svg" alt=""><span><b>Nervión & Heliópolis</b><small>Dos colores. Una ciudad. Todo el fútbol.</small></span></a>
-  <nav><a href="#episodios">Episodios</a><a href="#sevilla">Sevilla</a><a href="#betis">Betis</a><a href="#metodo">Método</a><a href="#patrocinio">Patrocinio</a></nav>
-</header>
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand-block">
+      <img src="logo.svg" alt="Nervión & Heliópolis" class="brand-mark">
+      <h1>NERVIÓN &<br>HELIÓPOLIS</h1>
+      <div class="club-line"><i></i><i></i></div>
+      <p>SEVILLA Y BETIS</p>
+    </div>
 
-<main>
-<section id="inicio" class="hero">
-  <div class="hero-copy">
-    <span class="eyebrow">PODCAST DE FÚTBOL SEVILLANO</span>
-    <h1>Dos colores.<br><em>Una ciudad.</em><br>Todo el fútbol.</h1>
-    <p>Previa y postpartido del Sevilla y del Betis en programas separados. Una sola voz, opinión propia, análisis y ritmo. Siempre en menos de 30 minutos.</p>
-    <div class="actions"><a href="#episodios" class="btn light">Ver episodios</a><a href="#formato" class="btn">Cómo funciona</a></div>
-    <div class="stats"><div><b>4</b><span>episodios / jornada</span></div><div><b>1</b><span>club / episodio</span></div><div><b>1</b><span>voz</span></div><div><b>&lt;30'</b><span>duración máxima</span></div></div>
-  </div>
-  <span class="side left">NERVIÓN</span><span class="side right">HELIÓPOLIS</span>
-</section>
+    <nav class="side-nav" aria-label="Navegación principal">
+      <button class="nav-item active" data-view="inicio"><span class="nav-icon">⌂</span>Inicio</button>
+      <button class="nav-item" data-view="explorar"><span class="nav-icon">◉</span>Explorar</button>
+      <button class="nav-item" data-view="archivo"><span class="nav-icon">▱</span>Archivo</button>
+      <button class="nav-item" data-view="control"><span class="nav-icon">☷</span>Control</button>
+      <button class="nav-item" data-view="instalar"><span class="nav-icon">▯</span>Instalar</button>
+    </nav>
 
-<section id="episodios" class="section">
-  <span class="eyebrow">SEMANA DE LANZAMIENTO</span><h2>Los programas que estamos preparando</h2>
-  <div class="cards">
-    <article class="card"><span class="pill">BETIS · PREVIA</span><small>HOY · 21:00 · CHAMPIONS</small><h3>Lille – Real Betis</h3><p>El Betis abre su camino europeo en Lille. Contexto, rival, tres claves, jugador a seguir y pronóstico.</p><ol><li>00:00 Apertura</li><li>02:00 Contexto</li><li>07:00 Lille</li><li>14:00 Claves</li><li>24:00 Veredicto</li></ol><button data-open="previa">Ver plantilla exacta</button></article>
-    <article class="card"><span class="pill">SEVILLA · PREVIA</span><small>VIE 11 SEP · 21:00 · LALIGA</small><h3>Sevilla – Valencia</h3><p>La previa del Sánchez-Pizjuán: momento de ambos equipos, tres claves, jugador a seguir y pronóstico.</p><ol><li>00:00 Apertura</li><li>02:00 Contexto</li><li>07:00 Valencia</li><li>14:00 Claves</li><li>24:00 Veredicto</li></ol><button data-open="previa">Ver plantilla exacta</button></article>
-    <article class="card"><span class="pill">BETIS · POSTPARTIDO</span><small>ÚLTIMO PARTIDO</small><h3>Real Betis 1–0 Real Madrid</h3><p>Lectura del triunfo bético: qué pasó, claves del partido, protagonistas, lo mejor, lo peor y veredicto.</p><ol><li>00:00 Resultado</li><li>03:00 Lectura</li><li>10:00 Claves</li><li>19:00 Protagonistas</li><li>25:00 Veredicto</li></ol><button data-open="post">Ver plantilla exacta</button></article>
-    <article class="card"><span class="pill">SEVILLA · POSTPARTIDO</span><small>ÚLTIMO PARTIDO</small><h3>Espanyol 1–1 Sevilla</h3><p>Stassin adelantó al Sevilla en el 85' y el Espanyol empató en el 90+8'. Análisis completo del partido.</p><ol><li>00:00 Resultado</li><li>03:00 Lectura</li><li>10:00 Claves</li><li>19:00 Protagonistas</li><li>25:00 Veredicto</li></ol><button data-open="post">Ver plantilla exacta</button></article>
-  </div>
-</section>
+    <div class="sidebar-foot">PROYECTO EDITORIAL INDEPENDIENTE</div>
+  </aside>
 
-<section id="formato" class="format">
-  <span class="eyebrow">FORMATO EXACTO</span><h2>Un episodio. Una voz. Cero relleno.</h2>
-  <div class="hosts">
-    <article><b>PRESENTADOR ÚNICO</b><h3>Opinión con ritmo</h3><p>Una sola persona conduce todo el episodio: abre, contextualiza, analiza, opina, marca los tiempos y cierra.</p></article>
-    <article><b>GUION CRONOMETRADO</b><h3>Menos de 30 minutos</h3><p>Cada bloque tiene una función concreta. Sin conversaciones artificiales, sin relleno y sin repetir información.</p></article>
-  </div>
-</section>
+  <main class="main-stage">
+    <section class="view active" id="view-inicio">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="hero-kicker">PODCAST INDEPENDIENTE · SEVILLA Y BETIS</div>
+          <h2>DOS<br>COLORES.<br><em>UNA<br>CIUDAD.</em><br>TODO EL<br>FÚTBOL.</h2>
+          <p>Podcast independiente. Sevilla y Betis.<br>Jornada, derbi y calle.</p>
+          <button class="play-main" data-view="explorar"><span>▶</span> Explorar episodios</button>
+        </div>
 
-<section class="clubs">
-  <article id="sevilla" class="club sevilla"><span class="mono">SFC</span><span class="eyebrow">NERVIÓN</span><h2>Sevilla FC</h2><p>Programa propio de previa y programa propio de postpartido.</p><ul><li>Actualidad y contexto</li><li>Tres claves del partido</li><li>Jugador a seguir o destacado</li><li>Opinión y veredicto final</li></ul></article>
-  <article id="betis" class="club betis"><span class="mono">RBB</span><span class="eyebrow">HELIÓPOLIS</span><h2>Real Betis</h2><p>Programa propio de previa y programa propio de postpartido.</p><ul><li>Actualidad y contexto</li><li>Tres claves del partido</li><li>Jugador a seguir o destacado</li><li>Opinión y veredicto final</li></ul></article>
-</section>
+        <div class="cover-wrap" aria-label="Portada Nervión & Heliópolis">
+          <div class="cover-art">
+            <div class="stadium-glow red"></div>
+            <div class="stadium-glow green"></div>
+            <div class="wave red-wave"></div>
+            <div class="wave green-wave"></div>
+            <img src="logo.svg" alt="" class="cover-mic">
+            <div class="cover-title">NERVIÓN <b>&</b> HELIÓPOLIS</div>
+            <div class="cover-tag">DOS COLORES. UNA CIUDAD. TODO EL FÚTBOL.</div>
+          </div>
+        </div>
+      </div>
 
-<section id="metodo" class="section">
-  <span class="eyebrow">REDACCIÓN</span><h2>La metodología</h2><p class="lead">Información verificada primero. Opinión después.</p>
-  <div class="steps"><div><b>01</b>Fuentes oficiales</div><div><b>02</b>3–5 temas clave</div><div><b>03</b>Guion cronometrado</div><div><b>04</b>Grabación</div><div><b>05</b>Edición</div><div><b>06</b>Publicación</div><div><b>07</b>Clips</div><div><b>08</b>Medición</div></div>
-  <p class="rule"><b>Regla editorial:</b> Sevilla y Betis tienen programas separados y el mismo estándar de profundidad, duración y exigencia informativa.</p>
-</section>
+      <section class="home-latest">
+        <div class="section-head"><span>AHORA</span><h3>Semana de lanzamiento</h3></div>
+        <div class="episode-strip">
+          <article class="mini-episode sevilla-tone">
+            <span>SEVILLA · PREVIA</span><h4>Sevilla – Valencia</h4><p>Vie 11 sep · 21:00 · LaLiga</p>
+          </article>
+          <article class="mini-episode betis-tone">
+            <span>BETIS · PREVIA</span><h4>Lille – Real Betis</h4><p>Champions · previa especial</p>
+          </article>
+          <article class="mini-episode neutral-tone">
+            <span>ÚLTIMOS POSTPARTIDOS</span><h4>Betis 1–0 Madrid · Espanyol 1–1 Sevilla</h4><p>Análisis, protagonistas y veredicto</p>
+          </article>
+        </div>
+      </section>
+    </section>
 
-<section id="patrocinio" class="sponsor">
-  <div><span class="eyebrow">PATROCINIO</span><h2>Una marca local dentro de una conversación local.</h2><p>Espacios disponibles en apertura, bloques de análisis, cierre y clips. Audiencia en fase de lanzamiento.</p></div>
-  <span class="btn light" aria-disabled="true">Contacto próximamente</span>
-</section>
-</main>
+    <section class="view" id="view-explorar">
+      <div class="page-title"><span>EXPLORAR</span><h2>Últimos episodios</h2><p>Previa y postpartido, un club por episodio y una sola voz.</p></div>
 
-<footer><div class="brand"><img src="logo.svg" alt=""><span><b>Nervión & Heliópolis</b><small>Proyecto editorial independiente.</small></span></div><p>No afiliado oficialmente a Sevilla FC ni Real Betis Balompié.</p></footer>
+      <div class="latest-list">
+        <article class="list-row">
+          <div class="thumb betis-thumb"><img src="logo.svg" alt=""></div>
+          <div><h3>Lille – Real Betis</h3><p>Heliópolis · Previa · 27–29 min</p></div>
+          <span class="status">PRÓXIMO</span>
+        </article>
+        <article class="list-row">
+          <div class="thumb sevilla-thumb"><img src="logo.svg" alt=""></div>
+          <div><h3>Sevilla – Valencia</h3><p>Nervión · Previa · 27–29 min</p></div>
+          <span class="status">11 SEP</span>
+        </article>
+        <article class="list-row">
+          <div class="thumb betis-thumb"><img src="logo.svg" alt=""></div>
+          <div><h3>Real Betis 1–0 Real Madrid</h3><p>Heliópolis · Postpartido · 27–29 min</p></div>
+          <span class="status">POST</span>
+        </article>
+        <article class="list-row">
+          <div class="thumb sevilla-thumb"><img src="logo.svg" alt=""></div>
+          <div><h3>Espanyol 1–1 Sevilla</h3><p>Nervión · Postpartido · 27–29 min</p></div>
+          <span class="status">POST</span>
+        </article>
+      </div>
 
-<dialog id="modal"><button class="x" aria-label="Cerrar">×</button><span class="eyebrow" id="mk"></span><h2 id="mt"></h2><div id="mb"></div></dialog>
+      <div class="section-head programs-head"><span>PROGRAMAS</span><h3>Cuatro formas de escuchar la ciudad</h3></div>
+      <div class="program-grid">
+        <article class="program-card"><div class="program-art master-art"><img src="logo.svg" alt=""></div><h3>NERVIÓN & HELIÓPOLIS</h3><p>Dos colores. Una ciudad.</p></article>
+        <article class="program-card"><div class="program-art art-nervion"><b>N</b></div><h3>NERVIÓN</h3><p>Sevilla FC, previa y post.</p></article>
+        <article class="program-card"><div class="program-art art-heliopolis"><b>H</b></div><h3>HELIÓPOLIS</h3><p>Real Betis, previa y post.</p></article>
+        <article class="program-card"><div class="program-art art-derbi"><b>DERBI</b></div><h3>DERBI</h3><p>Cuando la ciudad se divide.</p></article>
+      </div>
+    </section>
+
+    <section class="view" id="view-archivo">
+      <div class="page-title"><span>ARCHIVO</span><h2>Todos los programas</h2><p>La hemeroteca de Nervión & Heliópolis irá creciendo jornada a jornada.</p></div>
+      <div class="archive-grid">
+        <article class="archive-card betis-tone"><small>BETIS · PREVIA</small><h3>Lille – Real Betis</h3><p>Champions League · 27–29 min</p><button data-template="previa">Ver estructura</button></article>
+        <article class="archive-card sevilla-tone"><small>SEVILLA · PREVIA</small><h3>Sevilla – Valencia</h3><p>LaLiga · 27–29 min</p><button data-template="previa">Ver estructura</button></article>
+        <article class="archive-card betis-tone"><small>BETIS · POSTPARTIDO</small><h3>Betis 1–0 Real Madrid</h3><p>LaLiga · 27–29 min</p><button data-template="post">Ver estructura</button></article>
+        <article class="archive-card sevilla-tone"><small>SEVILLA · POSTPARTIDO</small><h3>Espanyol 1–1 Sevilla</h3><p>LaLiga · 27–29 min</p><button data-template="post">Ver estructura</button></article>
+      </div>
+    </section>
+
+    <section class="view" id="view-control">
+      <div class="page-title"><span>CONTROL</span><h2>Formato editorial</h2><p>La estructura de producción que mantiene el programa ágil, reconocible y siempre por debajo de 30 minutos.</p></div>
+      <div class="control-grid">
+        <article><small>01</small><h3>Una sola voz</h3><p>El presentador conduce, analiza, opina y cierra. Sin diálogos artificiales.</p></article>
+        <article><small>02</small><h3>Un club por episodio</h3><p>Sevilla y Betis tienen programas separados con el mismo estándar editorial.</p></article>
+        <article><small>03</small><h3>27–29 minutos</h3><p>Guion cronometrado, bloques cerrados y cero relleno.</p></article>
+        <article><small>04</small><h3>Datos verificados</h3><p>Primero información contrastada. Después opinión.</p></article>
+      </div>
+      <div class="control-actions"><button data-template="previa">Plantilla de previa</button><button data-template="post">Plantilla de postpartido</button></div>
+    </section>
+
+    <section class="view" id="view-instalar">
+      <div class="page-title"><span>INSTALAR</span><h2>Llévalo en el móvil</h2><p>Puedes instalar Nervión & Heliópolis como una app desde el navegador, sin pagar y sin pasar por una tienda.</p></div>
+      <div class="install-box">
+        <img src="logo.svg" alt="Nervión & Heliópolis">
+        <div><h3>Nervión & Heliópolis</h3><p>Acceso directo, pantalla completa y experiencia de app.</p><button id="installBtn" disabled>Instalar aplicación</button><small id="installHint">Si tu navegador permite instalación, el botón se activará automáticamente.</small></div>
+      </div>
+      <div class="install-tips"><p><b>iPhone/iPad:</b> Safari → Compartir → Añadir a pantalla de inicio.</p><p><b>Android/Chrome:</b> menú del navegador → Instalar aplicación.</p></div>
+    </section>
+  </main>
+</div>
+
+<dialog id="modal">
+  <button class="modal-close" aria-label="Cerrar">×</button>
+  <span class="modal-kicker" id="mk"></span>
+  <h2 id="mt"></h2>
+  <div id="mb"></div>
+</dialog>
+
 <script src="app.js"></script>
-</body></html>
+</body>
+</html>
