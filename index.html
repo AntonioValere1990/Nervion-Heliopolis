@@ -3,166 +3,75 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#090909">
+  <meta name="theme-color" content="#080808">
   <title>Nervión & Heliópolis</title>
-  <meta name="description" content="Podcast independiente del Sevilla y el Betis. Previa y postpartido por separado, una sola voz y menos de 30 minutos.">
-  <link rel="canonical" href="https://podcast-nervionyheliopolis.github.io/NervionyHeliopolis/">
-  <meta property="og:title" content="Nervión & Heliópolis">
-  <meta property="og:description" content="Dos colores. Una ciudad. Todo el fútbol.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://podcast-nervionyheliopolis.github.io/NervionyHeliopolis/">
-  <meta property="og:image" content="https://podcast-nervionyheliopolis.github.io/NervionyHeliopolis/og.jpg">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="N y H">
-  <link rel="icon" href="favicon.svg">
-  <link rel="apple-touch-icon" href="icon-192.png">
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Podcast independiente. Sevilla y Betis. Dos colores. Una ciudad. Todo el fútbol.">
+  <link rel="icon" href="public/favicon.svg">
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
-<div class="app-shell">
+<div class="shell">
   <aside class="sidebar">
-    <div class="brand-block">
-      <img src="logo.svg" alt="Nervión & Heliópolis" class="brand-mark">
+    <div class="side-brand">
+      <img src="public/logo-64.png" class="mic-logo" alt="">
       <h1>NERVIÓN &<br>HELIÓPOLIS</h1>
-      <div class="club-line"><i></i><i></i></div>
+      <div class="duo"><span></span><span></span></div>
       <p>SEVILLA Y BETIS</p>
     </div>
-
-    <nav class="side-nav" aria-label="Navegación principal">
-      <button class="nav-item active" data-view="inicio"><span class="nav-icon">⌂</span>Inicio</button>
-      <button class="nav-item" data-view="explorar"><span class="nav-icon">◉</span>Explorar</button>
-      <button class="nav-item" data-view="archivo"><span class="nav-icon">▱</span>Archivo</button>
-      <button class="nav-item" data-view="control"><span class="nav-icon">☷</span>Control</button>
-      <button class="nav-item" data-view="instalar"><span class="nav-icon">▯</span>Instalar</button>
+    <nav>
+      <button class="nav-item active" data-view="inicio"><span>⌂</span>Inicio</button>
+      <button class="nav-item" data-view="explorar"><span>◉</span>Explorar</button>
+      <button class="nav-item" data-view="archivo"><span>▱</span>Archivo</button>
+      <button class="nav-item" data-view="control"><span>☷</span>Control</button>
+      <button class="nav-item" data-view="instalar"><span>▯</span>Instalar</button>
     </nav>
-
-    <div class="sidebar-foot">PROYECTO EDITORIAL INDEPENDIENTE</div>
   </aside>
 
-  <main class="main-stage">
-    <section class="view active" id="view-inicio">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <div class="hero-kicker">PODCAST INDEPENDIENTE · SEVILLA Y BETIS</div>
-          <h2>DOS<br>COLORES.<br><em>UNA<br>CIUDAD.</em><br>TODO EL<br>FÚTBOL.</h2>
+  <main>
+    <section class="view active home" id="view-inicio">
+      <div class="hero">
+        <div class="copy">
+          <div class="pill">PODCAST INDEPENDIENTE ·<br>SEVILLA Y BETIS</div>
+          <h2><span>DOS</span><span>COLORES.</span><em>UNA</em><em>CIUDAD.</em><span>TODO EL</span><span>FÚTBOL.</span></h2>
           <p>Podcast independiente. Sevilla y Betis.<br>Jornada, derbi y calle.</p>
-          <button class="play-main" data-view="explorar"><span>▶</span> Explorar episodios</button>
+          <button class="gold-btn" data-view="explorar">▶ <b>Reproducir</b></button>
         </div>
-
-        <div class="cover-wrap" aria-label="Portada Nervión & Heliópolis">
-          <div class="cover-art">
-            <div class="stadium-glow red"></div>
-            <div class="stadium-glow green"></div>
-            <div class="wave red-wave"></div>
-            <div class="wave green-wave"></div>
-            <img src="logo.svg" alt="" class="cover-mic">
-            <div class="cover-title">NERVIÓN <b>&</b> HELIÓPOLIS</div>
-            <div class="cover-tag">DOS COLORES. UNA CIUDAD. TODO EL FÚTBOL.</div>
-          </div>
+        <div class="hero-cover">
+          <img src="public/covers/portada.jpg" alt="Portada Nervión & Heliópolis">
         </div>
       </div>
-
-      <section class="home-latest">
-        <div class="section-head"><span>AHORA</span><h3>Semana de lanzamiento</h3></div>
-        <div class="episode-strip">
-          <article class="mini-episode sevilla-tone playable" data-audio="audio/nocturno.mp3" data-title="Lo que queda cuando se apaga el derbi">
-            <span>AHORA · ESCUCHAR</span><h4>Lo que queda cuando se apaga el derbi</h4><p>Toca para reproducir</p>
-          </article>
-          <article class="mini-episode betis-tone playable" data-audio="audio/belleza.mp3" data-title="Dos cañas, mesa redonda">
-            <span>DERBI · ESCUCHAR</span><h4>Dos cañas, mesa redonda</h4><p>Toca para reproducir</p>
-          </article>
-          <article class="mini-episode neutral-tone playable" data-audio="audio/platero.mp3" data-title="Naranjos de Nervión">
-            <span>NERVIÓN · ESCUCHAR</span><h4>Naranjos de Nervión</h4><p>Toca para reproducir</p>
-          </article>
-        </div>
-      </section>
     </section>
 
-    <section class="view" id="view-explorar">
-      <div class="page-title"><span>EXPLORAR</span><h2>Últimos episodios</h2><p>Previa y postpartido, un club por episodio y una sola voz.</p></div>
-
+    <section class="view explore" id="view-explorar">
       <div class="latest-list">
-        <article class="list-row playable" data-audio="audio/belleza.mp3" data-title="Dos cañas, mesa redonda">
-          <div class="thumb betis-thumb"><img src="logo.svg" alt=""></div>
-          <div><h3>Dos cañas, mesa redonda</h3><p>Derbi · Escuchar</p></div>
-          <span class="status">▶</span>
-        </article>
-        <article class="list-row playable" data-audio="audio/nocturno.mp3" data-title="Lo que queda cuando se apaga el derbi">
-          <div class="thumb sevilla-thumb"><img src="logo.svg" alt=""></div>
-          <div><h3>Lo que queda cuando se apaga el derbi</h3><p>Nervión & Heliópolis · Escuchar</p></div>
-          <span class="status">▶</span>
-        </article>
-        <article class="list-row playable" data-audio="audio/nariz.mp3" data-title="Heliópolis a oscuras">
-          <div class="thumb betis-thumb"><img src="logo.svg" alt=""></div>
-          <div><h3>Heliópolis a oscuras</h3><p>Heliópolis · Escuchar</p></div>
-          <span class="status">▶</span>
-        </article>
-        <article class="list-row playable" data-audio="audio/platero.mp3" data-title="Naranjos de Nervión">
-          <div class="thumb sevilla-thumb"><img src="logo.svg" alt=""></div>
-          <div><h3>Naranjos de Nervión</h3><p>Nervión · Escuchar</p></div>
-          <span class="status">▶</span>
-        </article>
+        <article data-audio="public/audio/vivo.mp3" data-title="Dormir es un país"><img src="public/covers/ep-dormir.jpg"><div><h3>Dormir es un país</h3><p>Nervión & Heliópolis · T02 · E04 · 4:22</p></div></article>
+        <article data-audio="public/audio/redondillas.mp3" data-title="Voces en el pasillo"><img src="public/covers/ep-pasillo.jpg"><div><h3>Voces en el pasillo</h3><p>Nervión · T01 · E07 · 3:52</p></div></article>
+        <article data-audio="public/audio/a_ti.mp3" data-title="El río, de vuelta"><img src="public/covers/ep-rio.jpg"><div><h3>El río, de vuelta</h3><p>Heliópolis · T01 · E03 · 0:46</p></div></article>
       </div>
 
-      <div class="section-head programs-head"><span>PROGRAMAS</span><h3>Cuatro formas de escuchar la ciudad</h3></div>
-      <div class="program-grid">
-        <article class="program-card"><div class="program-art master-art"><img src="logo.svg" alt=""></div><h3>NERVIÓN & HELIÓPOLIS</h3><p>Dos colores. Una ciudad.</p></article>
-        <article class="program-card"><div class="program-art art-nervion"><b>N</b></div><h3>NERVIÓN</h3><p>Sevilla FC, previa y post.</p></article>
-        <article class="program-card"><div class="program-art art-heliopolis"><b>H</b></div><h3>HELIÓPOLIS</h3><p>Real Betis, previa y post.</p></article>
-        <article class="program-card"><div class="program-art art-derbi"><b>DERBI</b></div><h3>DERBI</h3><p>Cuando la ciudad se divide.</p></article>
+      <div class="programs-title">PROGRAMAS</div>
+      <div class="programs">
+        <article><img src="public/covers/portada.jpg"><h3>NERVIÓN & HELIÓPOLIS</h3><p>Dos colores. Una ciudad...</p></article>
+        <article><img src="public/covers/show-nervion.jpg"><h3>NERVIÓN</h3><p>El barrio del este</p></article>
+        <article><img src="public/covers/show-heliopolis.jpg"><h3>HELIÓPOLIS</h3><p>El barrio del sur</p></article>
+        <article><img src="public/covers/show-derbi.jpg"><h3>DERBI</h3><p>Cuando la ciudad se...</p></article>
       </div>
     </section>
 
-    <section class="view" id="view-archivo">
-      <div class="page-title"><span>ARCHIVO</span><h2>Todos los programas</h2><p>La hemeroteca de Nervión & Heliópolis irá creciendo jornada a jornada.</p></div>
-      <div class="archive-grid">
-        <article class="archive-card betis-tone"><small>BETIS · PREVIA</small><h3>Lille – Real Betis</h3><p>Champions League · 27–29 min</p><button data-template="previa">Ver estructura</button></article>
-        <article class="archive-card sevilla-tone"><small>SEVILLA · PREVIA</small><h3>Sevilla – Valencia</h3><p>LaLiga · 27–29 min</p><button data-template="previa">Ver estructura</button></article>
-        <article class="archive-card betis-tone"><small>BETIS · POSTPARTIDO</small><h3>Betis 1–0 Real Madrid</h3><p>LaLiga · 27–29 min</p><button data-template="post">Ver estructura</button></article>
-        <article class="archive-card sevilla-tone"><small>SEVILLA · POSTPARTIDO</small><h3>Espanyol 1–1 Sevilla</h3><p>LaLiga · 27–29 min</p><button data-template="post">Ver estructura</button></article>
-      </div>
+    <section class="view generic" id="view-archivo">
+      <h2>ARCHIVO</h2><p>Todos los programas, ordenados por fecha y equipo.</p>
     </section>
-
-    <section class="view" id="view-control">
-      <div class="page-title"><span>CONTROL</span><h2>Formato editorial</h2><p>La estructura de producción que mantiene el programa ágil, reconocible y siempre por debajo de 30 minutos.</p></div>
-      <div class="control-grid">
-        <article><small>01</small><h3>Una sola voz</h3><p>El presentador conduce, analiza, opina y cierra. Sin diálogos artificiales.</p></article>
-        <article><small>02</small><h3>Un club por episodio</h3><p>Sevilla y Betis tienen programas separados con el mismo estándar editorial.</p></article>
-        <article><small>03</small><h3>27–29 minutos</h3><p>Guion cronometrado, bloques cerrados y cero relleno.</p></article>
-        <article><small>04</small><h3>Datos verificados</h3><p>Primero información contrastada. Después opinión.</p></article>
-      </div>
-      <div class="control-actions"><button data-template="previa">Plantilla de previa</button><button data-template="post">Plantilla de postpartido</button></div>
+    <section class="view generic" id="view-control">
+      <h2>CONTROL</h2><p>Área editorial y de producción.</p>
     </section>
-
-    <section class="view" id="view-instalar">
-      <div class="page-title"><span>INSTALAR</span><h2>Llévalo en el móvil</h2><p>Puedes instalar Nervión & Heliópolis como una app desde el navegador, sin pagar y sin pasar por una tienda.</p></div>
-      <div class="install-box">
-        <img src="logo.svg" alt="Nervión & Heliópolis">
-        <div><h3>Nervión & Heliópolis</h3><p>Acceso directo, pantalla completa y experiencia de app.</p><button id="installBtn" disabled>Instalar aplicación</button><small id="installHint">Si tu navegador permite instalación, el botón se activará automáticamente.</small></div>
-      </div>
-      <div class="install-tips"><p><b>iPhone/iPad:</b> Safari → Compartir → Añadir a pantalla de inicio.</p><p><b>Android/Chrome:</b> menú del navegador → Instalar aplicación.</p></div>
+    <section class="view generic" id="view-instalar">
+      <h2>INSTALAR</h2><p>Añade la web a tu pantalla de inicio desde el navegador.</p>
     </section>
   </main>
 </div>
 
-<dialog id="modal">
-  <button class="modal-close" aria-label="Cerrar">×</button>
-  <span class="modal-kicker" id="mk"></span>
-  <h2 id="mt"></h2>
-  <div id="mb"></div>
-</dialog>
-
-<script src="app.js"></script>
-
-<div class="mini-player" id="miniPlayer" hidden>
-  <button id="miniToggle" aria-label="Reproducir">▶</button>
-  <div>
-    <strong id="miniTitle">Nervión & Heliópolis</strong>
-    <small id="miniHint">Reproduciendo</small>
-  </div>
-</div>
-<audio id="player" preload="none"></audio>
-
+<div class="mini-player" id="miniPlayer" hidden><button id="miniToggle">▶</button><div><strong id="miniTitle"></strong><small>Reproduciendo</small></div></div>
+<audio id="player"></audio>
+<script src="app.js?v=4"></script>
 </body>
 </html>
