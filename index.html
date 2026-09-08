@@ -11,7 +11,11 @@
   <meta property="og:description" content="Dos colores. Una ciudad. Todo el fútbol.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://podcast-nervionyheliopolis.github.io/NervionyHeliopolis/">
+  <meta property="og:image" content="https://podcast-nervionyheliopolis.github.io/NervionyHeliopolis/og.jpg">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="N y H">
   <link rel="icon" href="favicon.svg">
+  <link rel="apple-touch-icon" href="icon-192.png">
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -62,14 +66,14 @@
       <section class="home-latest">
         <div class="section-head"><span>AHORA</span><h3>Semana de lanzamiento</h3></div>
         <div class="episode-strip">
-          <article class="mini-episode sevilla-tone">
-            <span>SEVILLA · PREVIA</span><h4>Sevilla – Valencia</h4><p>Vie 11 sep · 21:00 · LaLiga</p>
+          <article class="mini-episode sevilla-tone playable" data-audio="audio/nocturno.mp3" data-title="Lo que queda cuando se apaga el derbi">
+            <span>AHORA · ESCUCHAR</span><h4>Lo que queda cuando se apaga el derbi</h4><p>Toca para reproducir</p>
           </article>
-          <article class="mini-episode betis-tone">
-            <span>BETIS · PREVIA</span><h4>Lille – Real Betis</h4><p>Champions · previa especial</p>
+          <article class="mini-episode betis-tone playable" data-audio="audio/belleza.mp3" data-title="Dos cañas, mesa redonda">
+            <span>DERBI · ESCUCHAR</span><h4>Dos cañas, mesa redonda</h4><p>Toca para reproducir</p>
           </article>
-          <article class="mini-episode neutral-tone">
-            <span>ÚLTIMOS POSTPARTIDOS</span><h4>Betis 1–0 Madrid · Espanyol 1–1 Sevilla</h4><p>Análisis, protagonistas y veredicto</p>
+          <article class="mini-episode neutral-tone playable" data-audio="audio/platero.mp3" data-title="Naranjos de Nervión">
+            <span>NERVIÓN · ESCUCHAR</span><h4>Naranjos de Nervión</h4><p>Toca para reproducir</p>
           </article>
         </div>
       </section>
@@ -79,25 +83,25 @@
       <div class="page-title"><span>EXPLORAR</span><h2>Últimos episodios</h2><p>Previa y postpartido, un club por episodio y una sola voz.</p></div>
 
       <div class="latest-list">
-        <article class="list-row">
+        <article class="list-row playable" data-audio="audio/belleza.mp3" data-title="Dos cañas, mesa redonda">
           <div class="thumb betis-thumb"><img src="logo.svg" alt=""></div>
-          <div><h3>Lille – Real Betis</h3><p>Heliópolis · Previa · 27–29 min</p></div>
-          <span class="status">PRÓXIMO</span>
+          <div><h3>Dos cañas, mesa redonda</h3><p>Derbi · Escuchar</p></div>
+          <span class="status">▶</span>
         </article>
-        <article class="list-row">
+        <article class="list-row playable" data-audio="audio/nocturno.mp3" data-title="Lo que queda cuando se apaga el derbi">
           <div class="thumb sevilla-thumb"><img src="logo.svg" alt=""></div>
-          <div><h3>Sevilla – Valencia</h3><p>Nervión · Previa · 27–29 min</p></div>
-          <span class="status">11 SEP</span>
+          <div><h3>Lo que queda cuando se apaga el derbi</h3><p>Nervión & Heliópolis · Escuchar</p></div>
+          <span class="status">▶</span>
         </article>
-        <article class="list-row">
+        <article class="list-row playable" data-audio="audio/nariz.mp3" data-title="Heliópolis a oscuras">
           <div class="thumb betis-thumb"><img src="logo.svg" alt=""></div>
-          <div><h3>Real Betis 1–0 Real Madrid</h3><p>Heliópolis · Postpartido · 27–29 min</p></div>
-          <span class="status">POST</span>
+          <div><h3>Heliópolis a oscuras</h3><p>Heliópolis · Escuchar</p></div>
+          <span class="status">▶</span>
         </article>
-        <article class="list-row">
+        <article class="list-row playable" data-audio="audio/platero.mp3" data-title="Naranjos de Nervión">
           <div class="thumb sevilla-thumb"><img src="logo.svg" alt=""></div>
-          <div><h3>Espanyol 1–1 Sevilla</h3><p>Nervión · Postpartido · 27–29 min</p></div>
-          <span class="status">POST</span>
+          <div><h3>Naranjos de Nervión</h3><p>Nervión · Escuchar</p></div>
+          <span class="status">▶</span>
         </article>
       </div>
 
@@ -150,5 +154,15 @@
 </dialog>
 
 <script src="app.js"></script>
+
+<div class="mini-player" id="miniPlayer" hidden>
+  <button id="miniToggle" aria-label="Reproducir">▶</button>
+  <div>
+    <strong id="miniTitle">Nervión & Heliópolis</strong>
+    <small id="miniHint">Reproduciendo</small>
+  </div>
+</div>
+<audio id="player" preload="none"></audio>
+
 </body>
 </html>
