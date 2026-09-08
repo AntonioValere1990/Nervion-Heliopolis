@@ -6,14 +6,22 @@
   <meta name="theme-color" content="#080808">
   <title>Nervión & Heliópolis</title>
   <meta name="description" content="Podcast independiente. Sevilla y Betis. Dos colores. Una ciudad. Todo el fútbol.">
-  <link rel="icon" href="public/favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="canonical" href="https://podcast-nervionyheliopolis.github.io/NervionyHeliopolis/">
+  <meta property="og:title" content="Nervión & Heliópolis">
+  <meta property="og:description" content="Dos colores. Una ciudad. Todo el fútbol.">
+  <meta property="og:image" content="https://podcast-nervionyheliopolis.github.io/NervionyHeliopolis/og.jpg">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Nervión & Heliópolis">
+  <link rel="icon" href="icon-192.png">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 <div class="shell">
   <aside class="sidebar">
     <div class="side-brand">
-      <img src="public/logo-64.png" class="mic-logo" alt="">
+      <img src="public/logo-192.png" class="mic-logo" alt="Nervión & Heliópolis">
       <h1>NERVIÓN &<br>HELIÓPOLIS</h1>
       <div class="duo"><span></span><span></span></div>
       <p>SEVILLA Y BETIS</p>
@@ -34,44 +42,69 @@
           <div class="pill">PODCAST INDEPENDIENTE ·<br>SEVILLA Y BETIS</div>
           <h2><span>DOS</span><span>COLORES.</span><em>UNA</em><em>CIUDAD.</em><span>TODO EL</span><span>FÚTBOL.</span></h2>
           <p>Podcast independiente. Sevilla y Betis.<br>Jornada, derbi y calle.</p>
-          <button class="gold-btn" data-view="explorar">▶ <b>Reproducir</b></button>
+          <button class="gold-btn" data-audio="public/audio/nocturno.mp3" data-title="Lo que queda cuando se apaga el derbi" data-cover="public/covers/portada.jpg">▶ <b>Reproducir</b></button>
         </div>
         <div class="hero-cover">
           <img src="public/covers/portada.jpg" alt="Portada Nervión & Heliópolis">
         </div>
       </div>
+      <div class="home-feed">
+        <div class="programs-title">ÚLTIMOS EPISODIOS</div>
+        <div class="latest-list" id="home-list"></div>
+      </div>
     </section>
 
     <section class="view explore" id="view-explorar">
-      <div class="latest-list">
-        <article data-audio="public/audio/vivo.mp3" data-title="Dormir es un país"><img src="public/covers/ep-dormir.jpg"><div><h3>Dormir es un país</h3><p>Nervión & Heliópolis · T02 · E04 · 4:22</p></div></article>
-        <article data-audio="public/audio/redondillas.mp3" data-title="Voces en el pasillo"><img src="public/covers/ep-pasillo.jpg"><div><h3>Voces en el pasillo</h3><p>Nervión · T01 · E07 · 3:52</p></div></article>
-        <article data-audio="public/audio/a_ti.mp3" data-title="El río, de vuelta"><img src="public/covers/ep-rio.jpg"><div><h3>El río, de vuelta</h3><p>Heliópolis · T01 · E03 · 0:46</p></div></article>
-      </div>
-
+      <div class="programs-title">ÚLTIMOS EPISODIOS</div>
+      <div class="latest-list" id="explore-list"></div>
       <div class="programs-title">PROGRAMAS</div>
       <div class="programs">
-        <article><img src="public/covers/portada.jpg"><h3>NERVIÓN & HELIÓPOLIS</h3><p>Dos colores. Una ciudad...</p></article>
-        <article><img src="public/covers/show-nervion.jpg"><h3>NERVIÓN</h3><p>El barrio del este</p></article>
-        <article><img src="public/covers/show-heliopolis.jpg"><h3>HELIÓPOLIS</h3><p>El barrio del sur</p></article>
-        <article><img src="public/covers/show-derbi.jpg"><h3>DERBI</h3><p>Cuando la ciudad se...</p></article>
+        <article><img src="public/covers/portada.jpg" alt=""><h3>NERVIÓN & HELIÓPOLIS</h3><p>Dos colores. Una ciudad.</p></article>
+        <article><img src="public/covers/show-nervion.jpg" alt=""><h3>NERVIÓN</h3><p>El barrio del este</p></article>
+        <article><img src="public/covers/show-heliopolis.jpg" alt=""><h3>HELIÓPOLIS</h3><p>El barrio del sur</p></article>
+        <article><img src="public/covers/show-derbi.jpg" alt=""><h3>DERBI</h3><p>Cuando la ciudad se parte</p></article>
       </div>
     </section>
 
-    <section class="view generic" id="view-archivo">
-      <h2>ARCHIVO</h2><p>Todos los programas, ordenados por fecha y equipo.</p>
+    <section class="view explore" id="view-archivo">
+      <div class="programs-title">ARCHIVO</div>
+      <p class="section-lead">Todos los episodios de lanzamiento, listos para oír.</p>
+      <div class="latest-list" id="archive-list"></div>
     </section>
+
     <section class="view generic" id="view-control">
-      <h2>CONTROL</h2><p>Área editorial y de producción.</p>
+      <h2>CONTROL</h2>
+      <p>Una sola voz. Un club por episodio. Siempre por debajo de 30 minutos.</p>
+      <div class="control-grid">
+        <article><small>01</small><h3>Una sola voz</h3><p>El presentador conduce, analiza y cierra. Sin diálogos de relleno.</p></article>
+        <article><small>02</small><h3>Un club por episodio</h3><p>Sevilla y Betis, mismo estándar. Nervión y Heliópolis, misma ciudad.</p></article>
+        <article><small>03</small><h3>27–29 minutos</h3><p>Guion cronometrado. Previa y postpartido. Cero relleno.</p></article>
+        <article><small>04</small><h3>Datos primero</h3><p>Información verificada. Después, opinión.</p></article>
+      </div>
     </section>
+
     <section class="view generic" id="view-instalar">
-      <h2>INSTALAR</h2><p>Añade la web a tu pantalla de inicio desde el navegador.</p>
+      <h2>INSTALAR</h2>
+      <p>Queda en el teléfono como una app. Icono, pantalla completa, sin tienda.</p>
+      <div class="install-card">
+        <img src="public/logo-192.png" alt="">
+        <div>
+          <h3>Nervión & Heliópolis</h3>
+          <p>Libre · Sin anuncios · Sin cuenta</p>
+          <button class="gold-btn" id="installBtn">Instalar la app</button>
+          <small id="installHint">Android: Chrome → ⋮ → Instalar aplicación. iPhone: Safari → Compartir → Añadir a pantalla de inicio.</small>
+        </div>
+      </div>
     </section>
   </main>
 </div>
 
-<div class="mini-player" id="miniPlayer" hidden><button id="miniToggle">▶</button><div><strong id="miniTitle"></strong><small>Reproduciendo</small></div></div>
+<div class="mini-player" id="miniPlayer" hidden>
+  <img id="miniCover" src="public/covers/portada.jpg" alt="">
+  <div><strong id="miniTitle"></strong><small>Reproduciendo</small></div>
+  <button id="miniToggle">▶</button>
+</div>
 <audio id="player"></audio>
-<script src="app.js?v=4"></script>
+<script src="app.js?v=5"></script>
 </body>
 </html>
