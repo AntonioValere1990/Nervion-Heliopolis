@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700&family=Oswald:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Oswald", ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: #0a0a0a;
+  --color-foreground: #f4f0e6;
+  --color-card: #121212;
+  --color-secondary: #191919;
+  --color-muted: #8d877c;
+  --color-accent: #c9a45a;
+  --color-accent-foreground: #0a0a0a;
+  --color-border: #262626;
+  --color-hairline: #1c1c1c;
+  --color-ring: #c9a45a;
+
+  --text-kicker: 0.6875rem;
+  --tracking-kicker: 0.14em;
+  --leading-display: 0.88;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-3xl: 28px;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 18px 40px rgba(0, 0, 0, 0.45);
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --motion-quick: 150ms;
+  --motion-fast: 250ms;
+  --motion-slow: 400ms;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body,
+  #root {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    min-height: 100%;
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-accent-foreground);
+  }
+}
+
+@layer components {
+  .hero-stage {
+    background:
+      radial-gradient(ellipse 80% 70% at 18% 40%, color-mix(in oklab, #8b1c1c 16%, transparent), transparent 62%),
+      radial-gradient(ellipse 80% 70% at 88% 42%, color-mix(in oklab, #1f6b32 14%, transparent), transparent 62%);
+  }
+
+  .derby-bar {
+    display: flex;
+    height: 2px;
+    width: 2.75rem;
+    overflow: hidden;
+    border-radius: 9999px;
+  }
+
+  .derby-bar::before,
+  .derby-bar::after {
+    content: "";
+    flex: 1;
+  }
+
+  .derby-bar::before {
+    background: #b31d2a;
+  }
+
+  .derby-bar::after {
+    background: #1e8a3a;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
