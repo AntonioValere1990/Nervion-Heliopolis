@@ -1,0 +1,13 @@
+{
+  "name": "Nervión & Heliópolis",
+  "short_name": "N&H",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#090909",
+  "theme_color": "#090909",
+  "description": "Podcast independiente del Sevilla y el Betis.",
+  "icons": [
+    {"src":"favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
