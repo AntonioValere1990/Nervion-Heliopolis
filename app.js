@@ -1,7 +1,44 @@
-const modal=document.querySelector('#modal'),mt=document.querySelector('#mt'),mk=document.querySelector('#mk'),mb=document.querySelector('#mb');
-const data={
-previa:{k:'PREVIA · 27–29 MIN',t:'Plantilla exacta del programa',b:`<div class="rundown"><div><time>00:00–02:00</time><p><b>Apertura.</b> Qué partido es, por qué importa y el tema principal.</p></div><div><time>02:00–07:00</time><p><b>Contexto.</b> Momento del equipo, clasificación, sensaciones y novedades verificadas.</p></div><div><time>07:00–14:00</time><p><b>El rival.</b> Fortalezas, debilidades, estilo y dónde puede hacer daño.</p></div><div><time>14:00–23:00</time><p><b>Tres claves.</b> Lectura táctica y futbolística del partido.</p></div><div><time>23:00–27:00</time><p><b>Jugador a seguir + pronóstico.</b> Opinión razonada y escenario esperado.</p></div><div><time>27:00–29:00</time><p><b>Cierre.</b> Una idea final y despedida.</p></div></div><p>Un solo presentador. Lesiones, sanciones y alineaciones solo se dan como confirmadas cuando existe una fuente fiable.</p>`},
-post:{k:'POSTPARTIDO · 27–29 MIN',t:'Plantilla exacta del programa',b:`<div class="rundown"><div><time>00:00–03:00</time><p><b>Resultado + primera lectura.</b> La sensación principal nada más terminar.</p></div><div><time>03:00–10:00</time><p><b>Qué pasó.</b> Desarrollo del partido y decisiones que lo marcaron.</p></div><div><time>10:00–19:00</time><p><b>Tres claves.</b> Lectura táctica, errores y aciertos.</p></div><div><time>19:00–24:00</time><p><b>Protagonistas.</b> Destacado, decepción y momento decisivo.</p></div><div><time>24:00–27:00</time><p><b>Lo mejor y lo peor.</b> Balance directo.</p></div><div><time>27:00–29:00</time><p><b>Veredicto.</b> Qué significa el resultado y qué viene ahora.</p></div></div><p>Un solo presentador. El postpartido se publica cuando el partido ha finalizado y los datos están verificados.</p>`}};
-document.querySelectorAll('[data-open]').forEach(x=>x.onclick=()=>{let d=data[x.dataset.open];mk.textContent=d.k;mt.textContent=d.t;mb.innerHTML=d.b;modal.showModal()});
-document.querySelector('.x').onclick=()=>modal.close();
-modal.onclick=e=>{if(e.target===modal)modal.close()};
+const views=[...document.querySelectorAll('.view')];
+const nav=[...document.querySelectorAll('[data-view]')];
+function openView(name){
+  views.forEach(v=>v.classList.toggle('active',v.id===`view-${name}`));
+  document.querySelectorAll('.nav-item').forEach(b=>b.classList.toggle('active',b.dataset.view===name));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+nav.forEach(el=>el.addEventListener('click',()=>openView(el.dataset.view)));
+
+const modal=document.querySelector('#modal');
+const mt=document.querySelector('#mt');
+const mk=document.querySelector('#mk');
+const mb=document.querySelector('#mb');
+const templates={
+  previa:{k:'PREVIA · 27–29 MIN',t:'Plantilla exacta',b:`<div class="rundown"><div><time>00:00–02:00</time><p><b>Apertura.</b> Qué partido es, por qué importa y cuál es el asunto central.</p></div><div><time>02:00–07:00</time><p><b>Contexto.</b> Momento del equipo, clasificación y novedades verificadas.</p></div><div><time>07:00–14:00</time><p><b>El rival.</b> Fortalezas, debilidades y estilo.</p></div><div><time>14:00–23:00</time><p><b>Tres claves.</b> Lectura táctica y futbolística.</p></div><div><time>23:00–27:00</time><p><b>Jugador a seguir + pronóstico.</b></p></div><div><time>27:00–29:00</time><p><b>Cierre.</b> Idea final y despedida.</p></div></div>`},
+  post:{k:'POSTPARTIDO · 27–29 MIN',t:'Plantilla exacta',b:`<div class="rundown"><div><time>00:00–03:00</time><p><b>Resultado + primera lectura.</b></p></div><div><time>03:00–10:00</time><p><b>Qué pasó.</b> Desarrollo y decisiones que marcaron el partido.</p></div><div><time>10:00–19:00</time><p><b>Tres claves.</b> Aciertos, errores y lectura táctica.</p></div><div><time>19:00–24:00</time><p><b>Protagonistas.</b> Destacado, decepción y momento decisivo.</p></div><div><time>24:00–27:00</time><p><b>Lo mejor y lo peor.</b></p></div><div><time>27:00–29:00</time><p><b>Veredicto.</b> Qué significa el resultado y qué viene ahora.</p></div></div>`}
+};
+document.querySelectorAll('[data-template]').forEach(btn=>btn.addEventListener('click',()=>{
+  const d=templates[btn.dataset.template];
+  mk.textContent=d.k;mt.textContent=d.t;mb.innerHTML=d.b;modal.showModal();
+}));
+document.querySelector('.modal-close').addEventListener('click',()=>modal.close());
+modal.addEventListener('click',e=>{if(e.target===modal)modal.close()});
+
+let deferredPrompt;
+const installBtn=document.querySelector('#installBtn');
+const installHint=document.querySelector('#installHint');
+window.addEventListener('beforeinstallprompt',e=>{
+  e.preventDefault();
+  deferredPrompt=e;
+  installBtn.disabled=false;
+  installHint.textContent='Tu navegador permite instalar la aplicación.';
+});
+installBtn?.addEventListener('click',async()=>{
+  if(!deferredPrompt)return;
+  deferredPrompt.prompt();
+  await deferredPrompt.userChoice;
+  deferredPrompt=null;
+  installBtn.disabled=true;
+});
+
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+}
