@@ -15,7 +15,7 @@
   <link rel="icon" href="icon-192.png">
   <link rel="apple-touch-icon" href="icon-192.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=7">
 </head>
 <body>
 <div class="shell">
@@ -42,7 +42,7 @@
           <div class="pill">PODCAST INDEPENDIENTE ·<br>SEVILLA Y BETIS</div>
           <h2><span>DOS</span><span>COLORES.</span><em>UNA</em><em>CIUDAD.</em><span>TODO EL</span><span>FÚTBOL.</span></h2>
           <p>Podcast independiente. Sevilla y Betis.<br>Jornada, derbi y calle.</p>
-          <button class="gold-btn" data-audio="public/audio/nocturno.mp3" data-title="Lo que queda cuando se apaga el derbi" data-cover="public/covers/portada.jpg">▶ <b>Reproducir</b></button>
+          <button class="gold-btn" data-view="explorar"><b>Explorar programas</b></button>
         </div>
         <div class="hero-cover">
           <img src="public/covers/portada.jpg" alt="Portada Nervión & Heliópolis">
@@ -50,26 +50,26 @@
       </div>
       <div class="home-feed">
         <div class="programs-title">ÚLTIMOS EPISODIOS</div>
-        <div class="latest-list" id="home-list"></div>
+        <div class="empty-state">Todavía no hay episodios publicados.</div>
       </div>
     </section>
 
     <section class="view explore" id="view-explorar">
       <div class="programs-title">ÚLTIMOS EPISODIOS</div>
-      <div class="latest-list" id="explore-list"></div>
+      <div class="empty-state">Todavía no hay episodios publicados.</div>
       <div class="programs-title">PROGRAMAS</div>
       <div class="programs">
         <article><img src="public/covers/portada.jpg" alt=""><h3>NERVIÓN & HELIÓPOLIS</h3><p>Dos colores. Una ciudad.</p></article>
-        <article><img src="public/covers/show-nervion.jpg" alt=""><h3>NERVIÓN</h3><p>El barrio del este</p></article>
-        <article><img src="public/covers/show-heliopolis.jpg" alt=""><h3>HELIÓPOLIS</h3><p>El barrio del sur</p></article>
+        <article><img src="public/covers/show-nervion.jpg" alt=""><h3>NERVIÓN</h3><p>Sevilla FC</p></article>
+        <article><img src="public/covers/show-heliopolis.jpg" alt=""><h3>HELIÓPOLIS</h3><p>Real Betis</p></article>
         <article><img src="public/covers/show-derbi.jpg" alt=""><h3>DERBI</h3><p>Cuando la ciudad se parte</p></article>
       </div>
     </section>
 
     <section class="view explore" id="view-archivo">
       <div class="programs-title">ARCHIVO</div>
-      <p class="section-lead">Todos los episodios de lanzamiento, listos para oír.</p>
-      <div class="latest-list" id="archive-list"></div>
+      <p class="section-lead">Aquí aparecerán los programas cuando empecemos a publicarlos.</p>
+      <div class="empty-state">Archivo vacío.</div>
     </section>
 
     <section class="view generic" id="view-control">
@@ -98,13 +98,6 @@
     </section>
   </main>
 </div>
-
-<div class="mini-player" id="miniPlayer" hidden>
-  <img id="miniCover" src="public/covers/portada.jpg" alt="">
-  <div><strong id="miniTitle"></strong><small>Reproduciendo</small></div>
-  <button id="miniToggle">▶</button>
-</div>
-<audio id="player"></audio>
-<script src="app.js?v=6"></script>
+<script src="app.js?v=7"></script>
 </body>
 </html>
