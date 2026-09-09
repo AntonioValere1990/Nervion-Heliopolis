@@ -1,0 +1,140 @@
+name: Mirror podcast audio
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mirror-audio.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install browser automation
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright requests
+          python -m playwright install --with-deps chromium
+
+      - name: Download episode from public share
+        env:
+          SHARE_URL: https://firestorage.ai/ja/f/9HQIlkxiVaWp
+          EPISODE_NAME: Nervion_y_Heliopolis_Post_Betis_Lille_FINAL_v8_8_75s_normal.mp3
+        run: |
+          mkdir -p public/audio
+          python - <<'PY'
+          import os, re, requests
+          from urllib.parse import urljoin
+          from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
+
+          share = os.environ['SHARE_URL']
+          filename = os.environ['EPISODE_NAME']
+          target = 'public/audio/postpartido-lille-betis-8-9-2026.mp3'
+          found = False
+
+          # First try: inspect the HTML for a direct media/download URL.
+          try:
+              r = requests.get(share, timeout=30, allow_redirects=True)
+              print('share status:', r.status_code, 'final:', r.url)
+              candidates = re.findall(r'https?://[^\"\'<>\\s]+', r.text)
+              candidates += [urljoin(r.url, x) for x in re.findall(r'href=[\"\']([^\"\']+)[\"\']', r.text)]
+              for u in candidates:
+                  if '.mp3' in u.lower() or 'download' in u.lower():
+                      try:
+                          rr = requests.get(u, timeout=60, allow_redirects=True)
+                          ctype = rr.headers.get('content-type','').lower()
+                          if rr.ok and (ctype.startswith('audio/') or rr.content[:3] == b'ID3') and len(rr.content) > 100000:
+                              open(target,'wb').write(rr.content)
+                              print('Downloaded direct media:', rr.url, len(rr.content))
+                              found = True
+                              break
+                      except Exception as e:
+                          print('candidate failed:', u, e)
+          except Exception as e:
+              print('HTML inspection failed:', e)
+
+          if not found:
+              with sync_playwright() as p:
+                  browser = p.chromium.launch(headless=True)
+                  page = browser.new_page(accept_downloads=True)
+                  media_urls = []
+                  def on_response(resp):
+                      try:
+                          ct = resp.headers.get('content-type','').lower()
+                          if ct.startswith('audio/') or '.mp3' in resp.url.lower():
+                              media_urls.append(resp.url)
+                              print('media response:', resp.url, ct)
+                      except Exception:
+                          pass
+                  page.on('response', on_response)
+                  page.goto(share, wait_until='domcontentloaded', timeout=120000)
+                  page.wait_for_timeout(5000)
+                  print('page title:', page.title())
+                  print('page url:', page.url)
+                  anchors = page.locator('a').evaluate_all("els => els.map(a => ({text:(a.innerText||'').trim(), href:a.href})).filter(x => x.href)")
+                  for a in anchors:
+                      print('anchor:', a)
+                  # Try filename/download controls and capture a browser download.
+                  selectors = [
+                      f'a:has-text("{filename}")',
+                      'a:has-text("ダウンロード")',
+                      'button:has-text("ダウンロード")',
+                      'a:has-text("Download")',
+                      'button:has-text("Download")',
+                      'a[href*="download"]',
+                  ]
+                  for sel in selectors:
+                      loc = page.locator(sel)
+                      if loc.count() < 1:
+                          continue
+                      try:
+                          with page.expect_download(timeout=15000) as di:
+                              loc.first.click()
+                          dl = di.value
+                          dl.save_as(target)
+                          print('browser download:', dl.suggested_filename)
+                          found = True
+                          break
+                      except PlaywrightTimeoutError:
+                          print('no download event for', sel)
+                      except Exception as e:
+                          print('click failed', sel, e)
+                  if not found:
+                      # Try any media URL seen by the browser.
+                      for u in media_urls:
+                          try:
+                              rr = requests.get(u, timeout=60, allow_redirects=True)
+                              if rr.ok and len(rr.content) > 100000:
+                                  open(target,'wb').write(rr.content)
+                                  print('downloaded intercepted media:', rr.url, len(rr.content))
+                                  found = True
+                                  break
+                          except Exception as e:
+                              print('media fetch failed:', u, e)
+                  browser.close()
+
+          if not found:
+              raise SystemExit('Could not locate/download the MP3 from the public share page')
+
+          data = open(target,'rb').read(16)
+          if not (data[:3] == b'ID3' or data[:2] in (b'\xff\xfb', b'\xff\xf3', b'\xff\xf2')):
+              print('header:', data)
+          print('saved bytes:', os.path.getsize(target))
+          PY
+
+      - name: Commit audio into website
+        run: |
+          git config user.name "Podcast"
+          git config user.email "arodriguez@valereconsultores.com"
+          git add public/audio/postpartido-lille-betis-8-9-2026.mp3
+          if git diff --cached --quiet; then
+            echo "Audio already present"
+            exit 0
+          fi
+          git commit -m "Alojar audio POSTPARTIDO LILLE-BETIS en la web"
+          git push
