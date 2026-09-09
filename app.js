@@ -8,6 +8,12 @@ document.querySelectorAll("[data-view]").forEach((el) => {
   el.addEventListener("click", () => openView(el.dataset.view));
 });
 
+// El reproductor ocupa todo el ancho útil de la tarjeta, no solo la columna de texto.
+document.querySelectorAll(".episode-card .native-player").forEach((player) => {
+  const card = player.closest(".episode-card");
+  if (card && player.parentElement !== card) card.appendChild(player);
+});
+
 // Si se inicia un reproductor, pausa cualquier otra copia del mismo episodio.
 document.querySelectorAll("audio").forEach((audio) => {
   audio.addEventListener("play", () => {
@@ -39,12 +45,12 @@ window.addEventListener("appinstalled", () => {
 });
 
 if ("caches" in window) {
-  caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== "nh-v15").map((k) => caches.delete(k)))).catch(() => {});
+  caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== "nh-v16").map((k) => caches.delete(k)))).catch(() => {});
 }
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {
     try {
-      const reg = await navigator.serviceWorker.register("./sw.js?v=15", { updateViaCache: "none" });
+      const reg = await navigator.serviceWorker.register("./sw.js?v=16", { updateViaCache: "none" });
       await reg.update();
     } catch (_) {}
   });
