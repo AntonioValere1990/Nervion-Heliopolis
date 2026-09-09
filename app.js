@@ -8,34 +8,12 @@ document.querySelectorAll("[data-view]").forEach((el) => {
   el.addEventListener("click", () => openView(el.dataset.view));
 });
 
-document.querySelectorAll(".inline-player-toggle").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const card = btn.closest(".episode-card");
-    const panel = card?.querySelector(".embedded-player");
-    const frame = panel?.querySelector("iframe");
-    if (!panel || !frame) return;
-
-    document.querySelectorAll(".embedded-player").forEach((other) => {
-      if (other !== panel) {
-        other.hidden = true;
-        const otherToggle = other.closest(".episode-card")?.querySelector(".inline-player-toggle");
-        if (otherToggle) otherToggle.textContent = "▶ Escuchar episodio";
-      }
+// Si se inicia un reproductor, pausa cualquier otra copia del mismo episodio.
+document.querySelectorAll("audio").forEach((audio) => {
+  audio.addEventListener("play", () => {
+    document.querySelectorAll("audio").forEach((other) => {
+      if (other !== audio) other.pause();
     });
-
-    if (!frame.getAttribute("src")) frame.setAttribute("src", panel.dataset.src);
-    panel.hidden = !panel.hidden;
-    btn.textContent = panel.hidden ? "▶ Escuchar episodio" : "⏸ Ocultar reproductor";
-  });
-});
-
-document.querySelectorAll(".close-player").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const panel = btn.closest(".embedded-player");
-    const card = btn.closest(".episode-card");
-    if (panel) panel.hidden = true;
-    const toggle = card?.querySelector(".inline-player-toggle");
-    if (toggle) toggle.textContent = "▶ Escuchar episodio";
   });
 });
 
@@ -61,12 +39,12 @@ window.addEventListener("appinstalled", () => {
 });
 
 if ("caches" in window) {
-  caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== "nh-v14").map((k) => caches.delete(k)))).catch(() => {});
+  caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== "nh-v15").map((k) => caches.delete(k)))).catch(() => {});
 }
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {
     try {
-      const reg = await navigator.serviceWorker.register("./sw.js?v=14", { updateViaCache: "none" });
+      const reg = await navigator.serviceWorker.register("./sw.js?v=15", { updateViaCache: "none" });
       await reg.update();
     } catch (_) {}
   });
