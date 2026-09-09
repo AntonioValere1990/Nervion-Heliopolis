@@ -61,12 +61,12 @@ window.addEventListener("appinstalled", () => {
 });
 
 if ("caches" in window) {
-  caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== "nh-v13").map((k) => caches.delete(k)))).catch(() => {});
+  caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== "nh-v14").map((k) => caches.delete(k)))).catch(() => {});
 }
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {
     try {
-      const reg = await navigator.serviceWorker.register("./sw.js?v=13", { updateViaCache: "none" });
+      const reg = await navigator.serviceWorker.register("./sw.js?v=14", { updateViaCache: "none" });
       await reg.update();
     } catch (_) {}
   });
