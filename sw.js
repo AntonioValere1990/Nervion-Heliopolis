@@ -1,5 +1,5 @@
-const CACHE = "nh-v11";
-const CORE = ["./", "./index.html", "./styles.css?v=11", "./app.js?v=11", "./manifest.json?v=11", "./icon-192.png", "./icon-512.png"];
+const CACHE = "nh-v12";
+const CORE = ["./", "./index.html", "./styles.css?v=12", "./app.js?v=12", "./manifest.json?v=12", "./icon-192.png", "./icon-512.png"];
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(CORE).catch(() => {})));
   self.skipWaiting();
