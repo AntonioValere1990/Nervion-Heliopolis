@@ -1,5 +1,5 @@
-const CACHE = "nh-v10";
-const CORE = ["./", "./index.html", "./styles.css?v=10", "./app.js?v=10", "./manifest.json", "./icon-192.png", "./icon-512.png", "./public/covers/postpartido-lille-betis-8-9-2026.jpg?v=1"];
+const CACHE = "nh-v11";
+const CORE = ["./", "./index.html", "./styles.css?v=11", "./app.js?v=11", "./manifest.json?v=11", "./icon-192.png", "./icon-512.png"];
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(CORE).catch(() => {})));
   self.skipWaiting();
@@ -12,11 +12,17 @@ self.addEventListener("activate", (event) => {
 });
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
+  if (event.request.mode === "navigate") {
+    event.respondWith(fetch(event.request, { cache: "no-store" }).catch(() => caches.match("./index.html")));
+    return;
+  }
   event.respondWith(
-    fetch(event.request)
+    fetch(event.request, { cache: "no-store" })
       .then((response) => {
-        const copy = response.clone();
-        caches.open(CACHE).then((cache) => cache.put(event.request, copy));
+        if (response && response.ok && event.request.url.startsWith(self.location.origin)) {
+          const copy = response.clone();
+          caches.open(CACHE).then((cache) => cache.put(event.request, copy));
+        }
         return response;
       })
       .catch(() => caches.match(event.request)),
