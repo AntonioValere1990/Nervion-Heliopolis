@@ -1,5 +1,5 @@
-const CACHE = "nh-v15";
-const CORE = ["./", "./index.html", "./styles.css?v=15", "./app.js?v=15", "./manifest.json?v=15", "./icon-192.png", "./icon-512.png", "./public/covers/postpartido-lille-betis-8-9-2026.jpg?v=15"];
+const CACHE = "nh-v16";
+const CORE = ["./", "./index.html", "./styles.css?v=16", "./app.js?v=16", "./manifest.json?v=16", "./icon-192.png", "./icon-512.png", "./public/covers/postpartido-lille-betis-8-9-2026.jpg?v=16"];
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(CORE).catch(() => {})));
   self.skipWaiting();
@@ -11,7 +11,6 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
 
-  // El audio necesita peticiones Range para avanzar/retroceder y hacer streaming.
   if (event.request.destination === "audio" || event.request.headers.has("range")) {
     event.respondWith(fetch(event.request));
     return;
