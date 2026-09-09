@@ -1,5 +1,5 @@
-const CACHE = "nh-v14";
-const CORE = ["./", "./index.html", "./styles.css?v=14", "./app.js?v=14", "./manifest.json?v=14", "./icon-192.png", "./icon-512.png", "./public/covers/postpartido-lille-betis-8-9-2026.jpg?v=14"];
+const CACHE = "nh-v15";
+const CORE = ["./", "./index.html", "./styles.css?v=15", "./app.js?v=15", "./manifest.json?v=15", "./icon-192.png", "./icon-512.png", "./public/covers/postpartido-lille-betis-8-9-2026.jpg?v=15"];
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(CORE).catch(() => {})));
   self.skipWaiting();
@@ -10,6 +10,13 @@ self.addEventListener("activate", (event) => {
 });
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
+
+  // El audio necesita peticiones Range para avanzar/retroceder y hacer streaming.
+  if (event.request.destination === "audio" || event.request.headers.has("range")) {
+    event.respondWith(fetch(event.request));
+    return;
+  }
+
   if (event.request.mode === "navigate") {
     event.respondWith(fetch(event.request, { cache: "no-store" }).catch(() => caches.match("./index.html")));
     return;
@@ -19,7 +26,7 @@ self.addEventListener("fetch", (event) => {
       .then((response) => {
         if (response && response.ok && event.request.url.startsWith(self.location.origin)) {
           const copy = response.clone();
-          caches.open(CACHE).then((cache) => cache.put(event.request, copy));
+          caches.open(CACHE).then((cache) => cache.put(event.request, copy)).catch(() => {});
         }
         return response;
       })
