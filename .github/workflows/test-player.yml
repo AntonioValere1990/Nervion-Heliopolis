@@ -1,0 +1,33 @@
+name: Test published player
+
+on:
+  push:
+    paths:
+      - '.github/workflows/test-player.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check live HTML and MP3 streaming
+        run: |
+          set -euxo pipefail
+          PAGE='https://podcast-nervionyheliopolis.github.io/NervionyHeliopolis/?v=15'
+          AUDIO='https://podcast-nervionyheliopolis.github.io/NervionyHeliopolis/public/audio/postpartido-lille-betis-8-9-2026.mp3?v=15'
+          curl -fsSL "$PAGE" -o page.html
+          grep -F 'public/audio/postpartido-lille-betis-8-9-2026.mp3?v=15' page.html
+          curl -fsSIL "$AUDIO" | tee headers.txt
+          curl -fsSL -r 0-4095 "$AUDIO" -o audio-head.bin
+          test -s audio-head.bin
+          python - <<'PY'
+          from pathlib import Path
+          b=Path('audio-head.bin').read_bytes()
+          print('downloaded bytes:', len(b))
+          print('first 16 bytes:', b[:16])
+          assert b[:3] == b'ID3' or b[:2] in (b'\xff\xfb', b'\xff\xf3', b'\xff\xf2'), 'Response is not MP3 data'
+          print('MP3 streaming check OK')
+          PY
