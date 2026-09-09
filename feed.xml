@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Nervión &amp; Heliópolis</title>
+    <link>https://podcast-nervionyheliopolis.github.io/NervionyHeliopolis/</link>
+    <atom:link href="https://podcast-nervionyheliopolis.github.io/NervionyHeliopolis/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Podcast independiente sobre Sevilla FC y Real Betis. Previas, postpartidos, análisis y opinión desde Sevilla. Dos colores. Una ciudad. Todo el fútbol.</description>
+    <language>es-es</language>
+    <copyright>© 2026 Nervión &amp; Heliópolis</copyright>
+    <lastBuildDate>Wed, 09 Sep 2026 18:12:00 +0200</lastBuildDate>
+    <generator>Nervión &amp; Heliópolis</generator>
+    <itunes:author>Nervión &amp; Heliópolis</itunes:author>
+    <itunes:summary>Podcast independiente sobre Sevilla FC y Real Betis. Previas, postpartidos, análisis y opinión desde Sevilla.</itunes:summary>
+    <itunes:owner>
+      <itunes:name>Nervión &amp; Heliópolis</itunes:name>
+      <itunes:email>arodriguez@valereconsultores.com</itunes:email>
+    </itunes:owner>
+    <itunes:image href="https://podcast-nervionyheliopolis.github.io/NervionyHeliopolis/public/covers/portada.jpg" />
+    <itunes:category text="Sports" />
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+
+    <item>
+      <title>POSTPARTIDO LILLE-BETIS 8-9-2026</title>
+      <link>https://podcast-nervionyheliopolis.github.io/NervionyHeliopolis/?episode=postpartido-lille-betis-8-9-2026</link>
+      <guid isPermaLink="false">nh-postpartido-lille-betis-2026-09-08</guid>
+      <pubDate>Wed, 09 Sep 2026 18:00:00 +0200</pubDate>
+      <description>Postpartido del Lille-Betis del 8 de septiembre de 2026. Análisis de la victoria del Real Betis, claves del encuentro y valoración final.</description>
+      <content:encoded><![CDATA[<p>Postpartido del Lille-Betis del 8 de septiembre de 2026. Análisis de la victoria del Real Betis, claves del encuentro y valoración final.</p>]]></content:encoded>
+      <enclosure url="https://podcast-nervionyheliopolis.github.io/NervionyHeliopolis/public/audio/postpartido-lille-betis-8-9-2026.mp3" length="20343457" type="audio/mpeg" />
+      <itunes:author>Nervión &amp; Heliópolis</itunes:author>
+      <itunes:summary>Postpartido del Lille-Betis del 8 de septiembre de 2026. Análisis de la victoria del Real Betis.</itunes:summary>
+      <itunes:duration>00:14:07</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://podcast-nervionyheliopolis.github.io/NervionyHeliopolis/public/covers/postpartido-lille-betis-8-9-2026.jpg" />
+    </item>
+  </channel>
+</rss>
