@@ -29,8 +29,14 @@ window.addEventListener("appinstalled", () => {
   if (hint) hint.textContent = "Ya está en tu pantalla de inicio.";
 });
 
+if ("caches" in window) {
+  caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== "nh-v11").map((k) => caches.delete(k)))).catch(() => {});
+}
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./sw.js", { updateViaCache: "none" }).catch(() => {});
+  window.addEventListener("load", async () => {
+    try {
+      const reg = await navigator.serviceWorker.register("./sw.js?v=11", { updateViaCache: "none" });
+      await reg.update();
+    } catch (_) {}
   });
 }
