@@ -1,5 +1,5 @@
-const CACHE = "nh-v16";
-const CORE = ["./", "./index.html", "./styles.css?v=16", "./app.js?v=16", "./manifest.json?v=16", "./icon-192.png", "./icon-512.png", "./public/covers/postpartido-lille-betis-8-9-2026.jpg?v=16"];
+const CACHE = "nh-v17";
+const CORE = ["./", "./index.html", "./styles.css?v=17", "./app.js?v=17", "./manifest.json?v=17", "./icon-192.png", "./icon-512.png", "./public/covers/postpartido-lille-betis-8-9-2026.jpg?v=17"];
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(CORE).catch(() => {})));
   self.skipWaiting();
