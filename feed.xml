@@ -10,7 +10,7 @@
     <description>Podcast independiente sobre Sevilla FC y Real Betis. Previas, postpartidos, análisis y opinión desde Sevilla. Dos colores. Una ciudad. Todo el fútbol.</description>
     <language>es-es</language>
     <copyright>© 2026 Nervión &amp; Heliópolis</copyright>
-    <lastBuildDate>Wed, 09 Sep 2026 18:12:00 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2026 12:00:00 +0200</lastBuildDate>
     <generator>Nervión &amp; Heliópolis</generator>
     <itunes:author>Nervión &amp; Heliópolis</itunes:author>
     <itunes:summary>Podcast independiente sobre Sevilla FC y Real Betis. Previas, postpartidos, análisis y opinión desde Sevilla.</itunes:summary>
@@ -22,6 +22,22 @@
     <itunes:category text="Sports" />
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
+
+    <item>
+      <title>PREVIA SEVILLA-VALENCIA 11-09-2026</title>
+      <link>https://podcast-nervionyheliopolis.github.io/NervionyHeliopolis/?episode=previa-sevilla-valencia-11-09-2026</link>
+      <guid isPermaLink="false">nh-previa-sevilla-valencia-2026-09-11</guid>
+      <pubDate>Fri, 11 Sep 2026 12:00:00 +0200</pubDate>
+      <description>La previa completa del Sevilla FC-Valencia CF de la quinta jornada de LaLiga. Analizamos el momento de ambos equipos, las bajas, las claves tácticas y todo lo que puede suceder en el Ramón Sánchez-Pizjuán.</description>
+      <content:encoded><![CDATA[<p>La previa completa del Sevilla FC-Valencia CF de la quinta jornada de LaLiga. Analizamos el momento de ambos equipos, las bajas, las claves tácticas y todo lo que puede suceder en el Ramón Sánchez-Pizjuán.</p>]]></content:encoded>
+      <enclosure url="https://nervion-heliopolis.lovable.app/__l5e/assets-v1/466d5ba1-16f8-4522-b0b2-df8cb1945bd8/Previa_Sevilla_Valencia_11-09-2026_Voz_Grave_Nueva.mp3" length="24762371" type="audio/mpeg" />
+      <itunes:author>Nervión &amp; Heliópolis</itunes:author>
+      <itunes:summary>Sevilla FC vs Valencia CF en el Ramón Sánchez-Pizjuán. Previa, claves tácticas, bajas y análisis del partido.</itunes:summary>
+      <itunes:duration>00:17:11</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://nervion-heliopolis.lovable.app/__l5e/assets-v1/08c7b3f9-644b-4867-a389-2ff62656b9d5/Previa_Sevilla_Valencia_11-09-2026_4K_HORA_DESTACADA.jpg" />
+    </item>
 
     <item>
       <title>POSTPARTIDO LILLE-BETIS 8-9-2026</title>
